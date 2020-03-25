@@ -25,7 +25,7 @@ class App extends React.Component {
     const socialMediaList = this.state.contacts;//data.Experiences;//
     return (
       <ul>
-        Hat geklappt1234!
+        Hat geklappt1234 8999!
         {/* {socialMediaList.map(s => (<li>{s.companyName}</li>))} */}
         {socialMediaList.map(s => (<li>{s.id}:{s.name}:Website: {s.website}</li>))}
       </ul>
