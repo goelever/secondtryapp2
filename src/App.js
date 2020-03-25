@@ -22,10 +22,14 @@ class App extends React.Component {
 //.catch(console.log)
   render() {
     const socialMediaList = this.state.contacts;//data.Experiences;//
+    var first = socialMediaList[0];
     return (
       <ul>
         Hat geklappt1234 8999!
         {/* {socialMediaList.map(s => (<li>{s.companyName}</li>))} */}
+        {<li>Laenge socialmedia: {socialMediaList.length}</li>}
+        
+        {<li>Ein Kontakt: {first}</li>}
         {socialMediaList.map(s => (<li>{s.id}:{s.name}:Website: {s.website}</li>))}
       </ul>
     );
