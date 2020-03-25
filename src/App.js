@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +25,7 @@ class App extends React.Component {
     const socialMediaList = this.state.contacts;//data.Experiences;//
     return (
       <ul>
-        Hat geklappt!
+        Hat geklappt1234!
         {/* {socialMediaList.map(s => (<li>{s.companyName}</li>))} */}
         {socialMediaList.map(s => (<li>{s.id}:{s.name}:Website: {s.website}</li>))}
       </ul>
