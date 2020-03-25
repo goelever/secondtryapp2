@@ -13,8 +13,8 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    fetch('http://jsonplaceholder.typicode.com/users')
+  async componentDidMount() {
+    await fetch('http://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
       .then((data) => {
         this.setState({ contacts: data })
