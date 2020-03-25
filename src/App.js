@@ -2,25 +2,33 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-           Hallo <code>Melaniemaus</code> wir sind im Internet!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contacts: []
+    };
+  }
 
+  componentDidMount() {
+    fetch('http://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({ contacts: data })
+      })
+      .catch(console.log)
+  }
+
+  render() {
+    const socialMediaList = this.state.contacts;//data.Experiences;//
+    return (
+      <ul>
+        Hat geklappt!
+        {/* {socialMediaList.map(s => (<li>{s.companyName}</li>))} */}
+        {socialMediaList.map(s => (<li>{s.id}:{s.name}:Website: {s.website}</li>))}
+      </ul>
+    );
+  }
+}
 export default App;
+
