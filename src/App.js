@@ -15,13 +15,13 @@ class App extends React.Component {
     };
   }
 
-  async componentDidMount() {
-    await fetch('http://jsonplaceholder.typicode.com/users')
+   componentDidMount() {
+     fetch('http://jsonplaceholder.typicode.com/users')
       .then(res => res.json(), this.setState({didfetch: true}))
       .then((data) => {
         this.setState({ contacts: data })
       },
-      this.setState({didsetState: true}))
+      this.setState({didsetState: true}));
     this.setState({didmount: true})
   }
 //.catch(console.log)
