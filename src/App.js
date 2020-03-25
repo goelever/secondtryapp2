@@ -18,9 +18,8 @@ class App extends React.Component {
       .then((data) => {
         this.setState({ contacts: data })
       })
-      .catch(console.log)
   }
-
+//.catch(console.log)
   render() {
     const socialMediaList = this.state.contacts;//data.Experiences;//
     return (
