@@ -9,16 +9,19 @@ class App extends React.Component {
     super(props);
     this.state = {
       contacts: [],
-      didmount: false
+      didmount: false,
+      didfetch: false,
+      didsetState: false
     };
   }
 
   async componentDidMount() {
     await fetch('http://jsonplaceholder.typicode.com/users')
-      .then(res => res.json())
+      .then(res => res.json(), this.setState({didfetch: true}))
       .then((data) => {
         this.setState({ contacts: data })
-      })
+      },
+      this.setState({didsetState: true}))
     this.setState({didmount: true})
   }
 //.catch(console.log)
@@ -31,7 +34,9 @@ class App extends React.Component {
         {/* {socialMediaList.map(s => (<li>{s.companyName}</li>))} */}
         {<li>Laenge socialmedia: {socialMediaList.length}</li>}
         
-        {<li>Didmount durchlaufen: {this.state.didmount.toString()} </li>}
+        {<li>didfetch : {this.state.didfetch.toString()} </li>}
+        {<li>didsetState : {this.state.didsetState.toString()} </li>}
+        {<li>Didmount : {this.state.didmount.toString()} </li>}
         {socialMediaList.map(s => (<li>{s.id}:{s.name}:Website: {s.website}</li>))}
       </ul>
     );
