@@ -19,13 +19,15 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const test = true;
     //const logger = new Logger('foo');
     try {
     fetch('http://jsonplaceholder.typicode.com/users')
       .then(res => res.json(), this.setState({ didfetch: true }))
       .then(
         (data) => {this.setState({ contacts: data })},
-        this.setState({ didsetState: true })
+        this.setState({ didsetState: true }),
+        
         
       
       )
@@ -40,7 +42,7 @@ class App extends React.Component {
   //.catch(console.log)
   render() {
     const { isLoading, users, error } = this.state;
-
+    alert('Achtung. Error = '+{error}+', l='+this.state.contacts.length)
     return (
 
       <ul>
