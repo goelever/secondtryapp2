@@ -18,7 +18,7 @@ class App extends React.Component {
 
   componentDidMount() {
     //const logger = new Logger('foo');
-    try {
+    //try {
     fetch('http://jsonplaceholder.typicode.com/users')
       .then(res => res.json(), this.setState({ didfetch: true }))
       .then((data) => {
@@ -26,9 +26,9 @@ class App extends React.Component {
       },
         this.setState({ didsetState: true })) 
         
-    }catch(e) {
+    //}catch(e) {
          // logger.error('error happened', e);
-        } 
+    //    } 
           this.setState({ didmount: true })
     }
   //.catch(console.log)
