@@ -37,7 +37,7 @@ class App extends React.Component {
     return (
       <ul>
         Rendering...
-        {<li>Length data:: {this.state.contacts.length}</li>}
+        {<li>Length data: {this.state.contacts.length}</li>}
         {<li>didfetch :: {this.state.didfetch.toString()} </li>}
         {<li>didsetState : {this.state.didsetState.toString()} </li>}
         {<li>Didmount : {this.state.didmount.toString()} </li>}
